@@ -5,5 +5,8 @@ const fetch = require('node-fetch');
   const sheet = new Sheet();
   await sheet.load();
 
-  fetch('https://jobs.github.com/positions.json?description=python&location=new+york');
-})
+  const res = await fetch('https://jobs.github.com/positions.json?description=python&location=new+york');
+  const json = await res.json();
+
+  console.log({json});
+})()
